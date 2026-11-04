@@ -4,3 +4,40 @@
 @media(max-width:850px){.hero{grid-template-columns:1fr .8fr;gap:15px}.hero-art{transform:scale(.85)}.prize-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.form-layout,.people-layout,.draw-layout{grid-template-columns:1fr}.side-note{display:none}.admin-intro{align-items:start;flex-direction:column}.intro-actions{width:100%}.draw-side{grid-template-columns:1fr 1fr}.results-card .button-row{flex-direction:column}}
 @media(max-width:600px){.wrap,.admin-wrap{width:calc(100% - 30px)}.topbar{height:65px;padding:0 15px}.brand{font-size:10px}.top-link{font-size:8px}.hero{grid-template-columns:1fr;padding-top:55px;padding-bottom:35px}.hero h1{font-size:72px}.hero-art{height:300px;transform:scale(.78);margin:-8px 0}.section{padding-top:35px;padding-bottom:40px}.section-heading{align-items:start;flex-direction:column;gap:9px}.prize-grid{grid-template-columns:1fr 1fr;gap:10px}.prize-image{height:130px}.prize-info{padding:12px}.prize-info h3{font-size:12px}.prize-info p{font-size:10px}.details-grid{grid-template-columns:1fr;padding-bottom:50px}.detail-panel{padding:21px}.footer-inner{padding:18px 0;align-items:flex-start;flex-direction:column}.admin-top-right{gap:9px}.local-badge{font-size:0}.admin-intro{padding:38px 0 25px}.admin-intro h1{font-size:59px}.intro-actions .button{flex:1;font-size:8px;padding:12px 8px}.admin-tabs{margin-right:-15px}.tab{padding:13px 12px;font-size:9px}.tab span{margin-left:3px}.panel-heading{align-items:start;flex-direction:column}.panel-heading h2{font-size:37px}.form-card,.list-card{padding:16px}.two-cols{grid-template-columns:1fr}.people-toolbar{align-items:stretch;flex-direction:column}.search-input{max-width:none}.list-footer{align-items:flex-start;flex-direction:column;gap:12px}.draw-side{grid-template-columns:1fr}.draw-stage{padding:22px 14px}.draw-prize-name{font-size:29px}.draw-button{width:100%;min-width:0}.admin-footer{flex-direction:column}.section-note{font-size:9px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Abertura da caixa premiada: revelação inspirada em jogos mobile */
+.chest-scene{height:350px;position:relative;display:grid;place-items:center;isolation:isolate;margin:10px auto 0;overflow:hidden;border-radius:14px;background:radial-gradient(ellipse at 50% 72%,#7041df35,transparent 48%),linear-gradient(180deg,#0c1024aa,#080a17aa)}
+.chest-scene:before{content:"";position:absolute;left:12%;right:12%;bottom:30px;height:28px;border-radius:50%;background:#8c54ff55;filter:blur(24px);opacity:.8}
+.chest-rays{position:absolute;width:260px;height:260px;border-radius:50%;background:conic-gradient(from 0deg,transparent,#8b5cf633,transparent,#21d4fd44,transparent,#f43f9b33,transparent);filter:blur(5px);opacity:.48;animation:chestRays 18s linear infinite}
+.chest-spark{position:absolute;color:#c9b8ff;text-shadow:0 0 14px #a78bfa;font-size:25px;opacity:.7;animation:sparkFloat 2.4s ease-in-out infinite alternate}
+.chest-spark-one{left:22%;top:23%}.chest-spark-two{right:22%;top:30%;animation-delay:.8s;color:#54eaff}
+.treasure-chest{position:relative;width:190px;height:154px;margin-top:50px;z-index:2;filter:drop-shadow(0 14px 22px #000b);transition:filter .4s}
+.chest-glow{position:absolute;z-index:-1;left:-40px;right:-40px;top:-55px;bottom:-28px;border-radius:50%;background:radial-gradient(ellipse,#9b5cff4d,transparent 68%);opacity:.45;transition:opacity .5s,transform .5s}
+.chest-base{position:absolute;left:5px;right:5px;bottom:0;height:91px;border:3px solid #f0b94e;border-radius:12px 12px 20px 20px;background:linear-gradient(105deg,#63300e 0%,#d88a25 18%,#7b3b12 37%,#f2bb55 51%,#7d3b12 69%,#d98a29 86%,#54270f 100%);box-shadow:inset 0 8px 10px #ffe5a655,inset 0 -13px 16px #2c100caa,0 0 0 5px #4d287b,0 0 24px #a86cff88;display:grid;place-items:center;overflow:hidden}
+.chest-base:before{content:"";position:absolute;inset:8px;border:2px solid #ffe2a4;border-radius:7px;opacity:.65}
+.chest-base:after{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:linear-gradient(90deg,#ffe7a8,#a45d19,#ffe8aa);opacity:.8}
+.chest-emblem{width:43px;height:43px;border:2px solid #ffe5a4;border-radius:50%;display:grid;place-items:center;color:#fff1c8;font:900 20px var(--display);text-shadow:0 0 12px #fff;box-shadow:0 0 16px #fff6;background:#7b3e1a88;z-index:1}
+.chest-lid{position:absolute;z-index:3;left:0;right:0;top:5px;height:76px;border:3px solid #f4c15d;border-radius:45px 45px 12px 12px;background:linear-gradient(105deg,#7a3c13,#e5a23b 22%,#71350f 43%,#f3c05e 58%,#793a12 78%,#c47a25);box-shadow:inset 0 8px 10px #ffe9a866,inset 0 -8px 12px #2c100c99,0 0 0 5px #4d287b;transform-origin:12% 100%;transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .5s}
+.chest-lid:before{content:"";position:absolute;inset:8px 10px 10px;border:2px solid #ffe2a4;border-radius:35px 35px 7px 7px;opacity:.6}
+.chest-lock{position:absolute;left:calc(50% - 15px);bottom:-12px;width:30px;height:34px;border:3px solid #ffe4a0;border-radius:7px;background:linear-gradient(135deg,#f8d77e,#98601e);color:#754015;display:grid;place-items:center;font-size:14px;box-shadow:0 0 12px #ffc65a88}
+.chest-scene.opening .treasure-chest{animation:chestShake .16s linear infinite;filter:drop-shadow(0 0 24px #a45cff)}
+.chest-scene.opening .chest-lid{animation:lidRattle .18s ease-in-out infinite alternate}
+.chest-scene.opening .chest-glow{opacity:1;transform:scale(1.35)}
+.chest-scene.opening .chest-rays{opacity:1;transform:scale(1.25);animation-duration:2s}
+.chest-scene.opened .chest-lid{transform:translate(-9px,-62px) rotate(-28deg)}
+.chest-scene.opened .chest-glow{opacity:1;transform:scale(1.65);background:radial-gradient(ellipse,#ffe58c99 0%,#9b5cff66 35%,transparent 72%)}
+.chest-scene.opened .chest-rays{opacity:1;transform:scale(1.45);animation-duration:5s}
+.reward-reveal{position:absolute;z-index:4;inset:12px 10px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;background:radial-gradient(ellipse at 50% 45%,#17102feF 0%,#0b0d1beF 68%);border:1px solid #a78bfa;border-radius:12px;opacity:0;visibility:hidden;transform:translateY(20px) scale(.86);pointer-events:none;transition:opacity .45s,transform .55s cubic-bezier(.2,1.35,.4,1),visibility .45s;box-shadow:0 0 45px #8b5cf666,inset 0 0 35px #8b5cf622}
+.reward-reveal.visible{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.reward-kicker{font-size:9px;font-weight:900;letter-spacing:.18em;color:#ffe18a;text-shadow:0 0 14px #f5bc52;margin-bottom:5px}
+.reward-image{width:84px;height:76px;border-radius:10px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(145deg,#33245c,#11172d);border:1px solid #8b72d8;box-shadow:0 0 24px #8b5cf655;margin:4px auto 6px;color:#d5c4ff;font-size:30px}
+.reward-image img{width:100%;height:100%;object-fit:contain}
+.reward-reveal .draw-prize-name{font-size:22px;color:#fff;margin:0 0 3px}
+.reward-reveal .winner-name{font-size:clamp(22px,3vw,34px);margin:2px 0;color:#ffe28c;text-shadow:0 0 20px #f2bd54aa;min-height:0}
+.reward-reveal .winner-phone{font-size:9px;color:#8cecff}
+@keyframes chestShake{0%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(-3px,1px) rotate(-1.5deg)}75%{transform:translate(3px,-1px) rotate(1.5deg)}}
+@keyframes lidRattle{from{transform:translateY(-2px) rotate(-2deg)}to{transform:translateY(2px) rotate(2deg)}}
+@keyframes chestRays{to{transform:rotate(360deg)}}
+@keyframes sparkFloat{from{transform:translateY(5px) scale(.8);opacity:.35}to{transform:translateY(-10px) scale(1.15);opacity:1}}
+@media(max-width:600px){.chest-scene{height:330px}.treasure-chest{transform:scale(.88);margin-top:45px}.reward-reveal{inset:9px 7px}.reward-image{width:72px;height:65px}.reward-reveal .draw-prize-name{font-size:19px}.reward-reveal .winner-name{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.chest-rays,.chest-spark,.chest-scene.opening .treasure-chest,.chest-scene.opening .chest-lid{animation:none!important}.chest-lid,.reward-reveal{transition-duration:.01ms!important}}
