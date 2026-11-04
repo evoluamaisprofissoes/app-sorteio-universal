@@ -1,0 +1,14 @@
+{
+  "campaign": {
+    "name": "Sorteio Universal",
+    "title": "A SUA CHANCE\nCOMEÇA AQUI.",
+    "tag": "CAMPANHA ESPECIAL",
+    "description": "Prepare-se para concorrer a prêmios incríveis. Confira os detalhes da campanha.",
+    "how": "Confira as regras da campanha e acompanhe as informações do sorteio.",
+    "rules": "Consulte o regulamento oficial da campanha.",
+    "footer": "Uma campanha especial. Uma chance de ganhar.",
+    "accent": "#8b5cf6",
+    "banner": ""
+  },
+  "prizes": []
+}
